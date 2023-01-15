@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class eventGame : MonoBehaviour
 {
@@ -19,7 +20,7 @@ public class eventGame : MonoBehaviour
     bool platePickedUp3 = false;
     bool platePickedUp4 = false;
     bool platePickedUp5 = false;
-    int platesCollected;
+    int platesCollected = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +37,12 @@ public class eventGame : MonoBehaviour
         if (platePickedUp3 == false) { platePickedUp3 = PlayerNearPlate(plate3, platePickedUp3); }
         if (platePickedUp4 == false) { platePickedUp4 = PlayerNearPlate(plate4, platePickedUp4); }
         if (platePickedUp5 == false) { platePickedUp5 = PlayerNearPlate(plate5, platePickedUp5); }
+
+        if (platesCollected == 5) {
+
+            SceneManager.LoadScene("House2");
+
+        }
     }
 
     private bool PlayerNearPlate(GameObject plate, bool platePicked) 

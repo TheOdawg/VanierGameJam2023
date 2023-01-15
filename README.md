@@ -3,6 +3,13 @@ Vanier Game Jam 2023
 
 
 
+Game by :
+
+Nurakin Cobran
+Maria Laouina
+Theo Trevick
+Gabriel Saberian
+
 
 Assets from :
 

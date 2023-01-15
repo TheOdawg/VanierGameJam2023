@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CowFollower : MonoBehaviour
 {
@@ -16,19 +18,31 @@ public class CowFollower : MonoBehaviour
     public GameObject locationToGo3;
     public Animator cowAnim;
     Vector3 lastPos;
+    public Image death;
+    public float killDist;
 
 
     void Start()
     {
-
+        death.gameObject.SetActive(false);
         goal = GameObject.FindGameObjectWithTag("Player").transform;
         agent = GetComponent<NavMeshAgent>();
-        agent.destination = goal.position;
+     //   agent.destination = goal.position;
         Debug.Log("proximity :" + proximity);
     }
 
     private void Update()
     {
+        if (Vector3.Distance(this.transform.position, goal.position) < killDist)
+        {
+
+            death.gameObject.SetActive(true);
+            Debug.Log("CLOSE");
+            SceneManager.LoadScene("Game Over");
+
+        }
+
+
         if (Vector3.Distance(this.transform.position, lastPos) < 0.1)
         {
             moving = false;
