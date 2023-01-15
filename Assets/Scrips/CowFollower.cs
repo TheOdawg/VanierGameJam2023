@@ -38,7 +38,9 @@ public class CowFollower : MonoBehaviour
 
             death.gameObject.SetActive(true);
             Debug.Log("CLOSE");
-            SceneManager.LoadScene("Game Over");
+          
+            StartCoroutine("LoadSceneAfterPeriod");
+
 
         }
 
@@ -68,6 +70,14 @@ public class CowFollower : MonoBehaviour
             agent.destination = goal.position;
             }
         }
+    }
+
+    private IEnumerator LoadSceneAfterPeriod()
+    {
+        Debug.Log("Loading new scene");
+        yield return new WaitForSeconds(5f);
+        SceneManager.LoadScene("Game Over");
+
     }
 
 
