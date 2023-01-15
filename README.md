@@ -20,3 +20,9 @@ vitefait.maintenance@gmail.com
 MARCIN'S ASSETS
 bodroidapps.wixsite.com/home
 marcinboho@outlook.com
+
+Audio & Media credits:
+https://www.theinfatuation.com/chicago/guides/dark-restaurants-chicago
+https://www.youtube.com/watch?v=O1wtKpdgk9c&ab_channel=HorrorMusicWorld
+https://www.youtube.com/watch?v=6nKbpLUpqiQ&ab_channel=SOUNDEFFECTEN%26FR
+https://www.youtube.com/watch?v=7Y4-4gATXFE&ab_channel=SoundEffectDatabase
