@@ -10,10 +10,11 @@ public class CowFollower : MonoBehaviour
     bool patrolling = false;
     NavMeshAgent agent;
     int currentPatrolTarget = 1;
-    public float proximity = 1;
+    public float proximity;
     public GameObject locationToGo1;
     public GameObject locationToGo2;
     public GameObject locationToGo3;
+    public Animator cowAnim;
     Vector3 lastPos;
 
 
@@ -23,12 +24,24 @@ public class CowFollower : MonoBehaviour
         goal = GameObject.FindGameObjectWithTag("Player").transform;
         agent = GetComponent<NavMeshAgent>();
         agent.destination = goal.position;
+        Debug.Log("proximity :" + proximity);
     }
 
     private void Update()
     {
+        if (Vector3.Distance(this.transform.position, lastPos) < 0.1)
+        {
+            moving = false;
+            cowAnim.SetBool("Ischasing", false);
+        }
+        else
+        {
+            moving = true;
+            cowAnim.SetBool("Ischasing", true);
+        }
 
-        if (Vector3.Distance(agent.destination, goal.position) > proximity && !patrolling) { // if we are too far cow doesn't follow player
+
+        if (Vector3.Distance(agent.transform.position, goal.position) > proximity && !patrolling) { // if we are too far cow doesn't follow player
 
             StartCoroutine(Patrol());
 
@@ -36,21 +49,12 @@ public class CowFollower : MonoBehaviour
         else
         { // if we are close cow follows
  
-         if (Vector3.Distance(agent.destination, goal.position) > 0.5) {  //if we are too close cow stops
+         if (Vector3.Distance(agent.transform.position, goal.position) < proximity)
+            { 
             agent.destination = goal.position;
             }
         }
     }
-
-
-
-
-
-
-
-
-
-
 
 
     private IEnumerator Patrol()
@@ -58,12 +62,7 @@ public class CowFollower : MonoBehaviour
 
         patrolling = true;
 
-        while(Vector3.Distance(agent.destination, goal.position) > proximity) {
-
-
-
-
-
+        while(Vector3.Distance(agent.transform.position, goal.position) > proximity) {
 
 
 
@@ -77,27 +76,27 @@ public class CowFollower : MonoBehaviour
 
                         currentPatrolTarget = 2;
                         agent.destination = locationToGo1.transform.position;
-                        moving = true;
+                        //moving = true;
+                        //cowAnim.SetBool("Ischasing", true);
                         break;
                     case 2:
 
                         currentPatrolTarget = 3;
                         agent.destination = locationToGo2.transform.position;
-                        moving = true;
+                        //moving = true;
+                        //cowAnim.SetBool("Ischasing", true);
                         break;
                     case 3:
 
                         currentPatrolTarget = 1;
                         agent.destination = locationToGo3.transform.position;
-                        moving = true;
+                        //moving = true;
+                        //cowAnim.SetBool("Ischasing", true);
                         break;
                 }
 
             }
-            else if (this.transform.position == lastPos)
-            {
-                moving = false;
-            }
+
 
 
             lastPos = this.transform.position;
