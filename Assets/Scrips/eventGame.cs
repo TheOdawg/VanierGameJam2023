@@ -40,7 +40,7 @@ public class eventGame : MonoBehaviour
 
         if (platesCollected == 5) {
 
-            SceneManager.LoadScene("House2");
+            SceneManager.LoadScene("Home2");
 
         }
     }
