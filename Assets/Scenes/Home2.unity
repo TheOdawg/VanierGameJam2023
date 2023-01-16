@@ -1800,7 +1800,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 721cab76686eb2b4c9711694bda96eef, type: 2}
+  - {fileID: 2100000, guid: ce3f274746d27334c93ebaf768866be6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2530,7 +2530,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1845979614}
   - component: {fileID: 1845979613}
-  - component: {fileID: 1845979612}
+  - component: {fileID: 1845979615}
   m_Layer: 0
   m_Name: Bed
   m_TagString: Untagged
@@ -2538,18 +2538,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1845979612
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1845979611}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c331779e5f76f6a4db1c0483c053dd99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1845979613
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2580,6 +2568,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &1845979615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1845979611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d820cd2a591f0a3489f4d426c77c7ee0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1897492582
 GameObject:
   m_ObjectHideFlags: 0
@@ -2993,6 +2993,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: de2d9e3a43f6d4d4e8d1f71e6224c1b1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fd65a3d3a2e1a2c46b185d7b23a47933, type: 2}
     - target: {fileID: 919132149155446097, guid: de2d9e3a43f6d4d4e8d1f71e6224c1b1, type: 3}
       propertyPath: m_Name
       value: LIght
