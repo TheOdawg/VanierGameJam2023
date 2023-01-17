@@ -33,7 +33,7 @@ public class CowFollower : MonoBehaviour
 
     private void Update()
     {
-        if (Vector3.Distance(this.transform.position, goal.position) < killDist)
+        if (Vector3.Distance(transform.position, goal.position) < killDist)
         {
 
             death.gameObject.SetActive(true);
@@ -75,7 +75,7 @@ public class CowFollower : MonoBehaviour
     private IEnumerator LoadSceneAfterPeriod()
     {
         Debug.Log("Loading new scene");
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(4f);
         SceneManager.LoadScene("Game Over");
 
     }
